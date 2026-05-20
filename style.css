@@ -9,6 +9,10 @@
     grid-template-rows: 45px 75px 75px 75px 75px 1fr;
     
 }
+
+#keyboard > div > div:hover {
+    background-color: rgba(0, 128, 0, 0.256);
+}
 img{
     margin-top: 10px;
 }
@@ -27,6 +31,8 @@ img{
     height: 62px;
     width: 65px;
 }
+
+
 
 div:last-child {
     margin-left: auto;
@@ -60,7 +66,8 @@ div:last-child {
 
 #row6 > div {
     height: 70px;
-}
+}¨
+
 
 #test{
     display: flex;
