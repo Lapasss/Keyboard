@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id = "test"></div>
-    
+    <img src="rpi_MECH_keyboard_SE_layout-1024x451-1.png" alt="keyboard">
+        <div id = "test"></div>
     <style>
         #test{
             height: 100px;
             width: 100px;
             border: solid black;
         }
+
+        img{
+            width: 1200px;
+        }
     </style>
     <script>
-        window.addEventListener("keydown", (event) => {console.log("is pressed")})
+        input.addEventListener("keydown", (event) => {console.log("is pressed")})
         onkeydown = (event) => {}
 
     </script>
