@@ -46,73 +46,71 @@
         <div class = "rows" id = "row3">
             <div id = "Tab" style = "width: 103px;"></div>
             <div id = "KeyQ"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div style = "width: 45px"></div>
-            <div></div>
+            <div id = "KeyW"></div>
+            <div id = "KeyE"></div>
+            <div id = "KeyR"></div>
+            <div id = "KeyT"></div>
+            <div id = "KeyY"></div>
+            <div id = "KeyU"></div>
+            <div id = "KeyI"></div>
+            <div id = "KeyO"></div>
+            <div id = "KeyP"></div>
+            <div id = "BracketLeft"></div>
+            <div id = "BracketRight" style = "width: 45px"></div>
+            <div id = "PageUp"></div>
         </div>
         <div class = "rows" id = "row4">
-            <div style="width: 125px;"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div style = "width: 45px"></div>
-            <div></div>
+            <div id = "CapsLock" style="width: 125px;"></div>
+            <div id = "KeyA"></div>
+            <div id = "KeyS"></div>
+            <div id = "KeyD"></div>
+            <div id = "KeyF"></div>
+            <div id = "KeyG"></div>
+            <div id = "KeyH"></div>
+            <div id = "KeyJ"></div>
+            <div id = "KeyK"></div>
+            <div id = "KeyL"></div>
+            <div id = "Semicolon"></div>
+            <div id = "Quote"></div>
+            <div id = "Backslash" style = "width: 45px"></div>
+            <div id = "PageDown"></div>
         </div>
         <div class = "rows" id = "row5">
-            <div style="width: 84px;"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div style="width: 160px;"></div>
-            <div></div>
+            <div id = "ShiftLeft" style="width: 84px;"></div>
+            <div id = "IntlBackslash"></div>
+            <div id = "KeyZ"></div>
+            <div id = "KeyX"></div>
+            <div id = "KeyC"></div>
+            <div id = "KeyV"></div>
+            <div id = "KeyB"></div>
+            <div id = "KeyN"></div>
+            <div id = "KeyM"></div>
+            <div id = "Comma"></div>
+            <div id = "Period"></div>
+            <div id = "Slash"></div>
+            <div id = "ShiftRight" style="width: 160px;"></div>
+            <div id = "End"></div>
         </div>
         <div class = "rows" id = "row6">
+            <div id = "ControlLeft"></div>
             <div></div>
-            <div></div>
-            <div></div>
-            <div style="width: 85px;"></div>
-            <div style="width: 365px;"></div>
-            <div style="width: 85px;"></div>
-            <div></div>
-            <div></div>
+            <div id = "MetaLeft"></div>
+            <div id = "AltLeft" style="width: 85px;"></div>
+            <div id = "Space" style="width: 365px;"></div>
+            <div id = "AltRight" style="width: 85px;"></div>
+            <div id = "ControlRight"></div>
+            <div id = "ArrowLeft"></div>
             <article style = "display: flex; flex-direction: column; gap:5px">
-                <div style="width: 150px; height: 32px;"></div>
-                <div style="width: 150px; height: 32px;"></div>
+                <div id = "ArrowUp" style="width: 150px; height: 32px;"></div>
+                <div id = "ArrowDown" style="width: 150px; height: 32px;"></div>
             </article>            
-            <div></div>
+            <div id = "ArrowRight"></div>
         </div>
     </div>
     
     <div id="Enter"></div>
 
-    <div id = "test">
-        <div id="point"></div>
-    </div>
+  
     <style>
         #test{
             height: 100px;
@@ -145,6 +143,12 @@
             var keyCodeString = event.code;
             console.log(keyCodeString);
             document.getElementById(keyCodeString).style.backgroundColor = "var(--button-keyboard-input)";
+            setTimeout(() => {
+                if(document.getElementById(keyCodeString).style.backgroundColor == "var(--button-keyboard-input)"){
+                    document.getElementById(keyCodeString).style.removeProperty("background-color");
+                }
+                 
+            }, 3000);
         })
 
         
