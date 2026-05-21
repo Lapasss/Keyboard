@@ -1,8 +1,14 @@
+:root {
+    --button-color: rgba(0, 0, 0, 0.192);
+    --button-hover-color: rgba(0, 128, 0, 0.256);
+    --button-keyboard-input:  rgba(128, 45, 0, 0.283);
+}
+
 #keyboard {
     display: grid;
     width: 1185px;
     height: 430px;
-    border: solid black;
+    border: solid transparent;
     transform: translate(0, -440px);
 
                         
@@ -10,9 +16,14 @@
     
 }
 
-#keyboard > div > div:hover {
-    background-color: rgba(0, 128, 0, 0.256);
+#keyboard > .rows div:hover {
+    background-color: var(--button-hover-color);
 }
+
+#Enter:hover {
+    background-color: var(--button-hover-color);
+}
+
 img{
     margin-top: 10px;
 }
@@ -21,15 +32,16 @@ img{
     flex-wrap: wrap;
     width: 100%;
     display: flex;
-    gap: 9px;
+    gap:  11.5px;
     align-items: center;
 }
 
-.rows > div {
+.rows  div {
     justify-items: flex-end;
-    background-color: rgba(0, 0, 0, 0.192);
+    background-color: var(--button-color);
     height: 62px;
     width: 65px;
+    border-radius: 6px;
 }
 
 
@@ -39,17 +51,18 @@ div:last-child {
     
 }
 
+
 #row1 > div {
-    width: 70px;
-    height: 43px;
+    width: 68px;
+    height: 36px;
 }
 
 #row2 {
-    gap: 12px;
+    gap: 11.8px;
 }
 
 #row3 {
-    gap: 12px;
+    gap: 11.95px;
 }
 
 #row4{
@@ -57,7 +70,7 @@ div:last-child {
 }
 
 #row5{
-    gap: 11.5px;
+    gap: 11.8px;
 }
 
 #row6{
@@ -65,21 +78,15 @@ div:last-child {
 }
 
 #row6 > div {
-    height: 70px;
-}¨
-
-
-#test{
-    display: flex;
-    width: 100px;
-    height: 100px;
-    align-items: center;
-    border: solid;
+    height: 71px;
 }
 
-#point {
-    margin-left: auto;
-    background-color: tomato;
-    width: 50px;
-    height: 50px;
+
+#Enter{
+    background-color: var(--button-color);
+    width: 80px;
+    height: 133px;
+    clip-path: polygon(100% 0, 100% 100%, 22% 100%, 22% 46%, 0 46%, 0 0);
+    transform: translate(1020px, -745px);
+    border-radius: 6px;
 }
