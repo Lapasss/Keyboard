@@ -90,3 +90,8 @@ div:last-child {
     transform: translate(1020px, -745px);
     border-radius: 6px;
 }
+
+
+body {
+    height: 800px;
+}

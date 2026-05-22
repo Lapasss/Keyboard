@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <img src="rpi_MECH_keyboard_SE_layout-1024x451-1.png" alt="keyboard" style="visibility: visible;">
+    <img src="img/rpi_MECH_keyboard_SE_layout-1024x451-1.png" alt="keyboard" style="visibility: visible;">
     <div id="keyboard">
         <div class = "rows" id = "row1">
             <div id = "Escape"></div>
@@ -97,10 +97,10 @@
             <div id = "MetaLeft"></div>
             <div id = "AltLeft" style="width: 85px;"></div>
             <div id = "Space" style="width: 365px;"></div>
-            <div id = "AltRight" style="width: 85px;"></div>
+            <div id = "AltRight" style="width: 82px;"></div>
             <div id = "ControlRight"></div>
             <div id = "ArrowLeft"></div>
-            <article style = "display: flex; flex-direction: column; gap:5px">
+            <article style = "margin-left: 2px; display: flex; flex-direction: column; gap:6px">
                 <div id = "ArrowUp" style="width: 150px; height: 32px;"></div>
                 <div id = "ArrowDown" style="width: 150px; height: 32px;"></div>
             </article>            
@@ -138,23 +138,26 @@
         }
     </style>
     <script>
-        window.addEventListener("keydown", (event) => {
+        let isFunctionActive = false;
+        document.addEventListener("keydown", (event) => {
             console.log(event)
             var keyCodeString = event.code;
             console.log(keyCodeString);
             document.getElementById(keyCodeString).style.backgroundColor = "var(--button-keyboard-input)";
+            /*
             setTimeout(() => {
                 if(document.getElementById(keyCodeString).style.backgroundColor == "var(--button-keyboard-input)"){
                     document.getElementById(keyCodeString).style.removeProperty("background-color");
                 }
                  
             }, 3000);
+            */
         })
 
         
 
 
-        window.addEventListener("keyup", (event) => {
+        document.addEventListener("keyup", (event) => {
             console.log(event)
             var keyCodeString = event.code;
             //console.log(keyCodeString);
