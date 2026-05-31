@@ -1,21 +1,61 @@
 :root {
     --button-color: rgba(46, 43, 43, 0.357);
     --button-hover-color: rgba(190, 48, 178, 0.721);
-    --button-keyboard-input:  rgba(217, 52, 47, 0.652);
+    --button-keyboard-input:  #d9342fa6;
+    --menu-settings-color: rgba(255, 255, 255, 0.516);
+    --menu-settings-color-border:  rgb(128, 128, 128);
+    --menu-settings-border-radius: 40px;
 }
+
+
+html{
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(79, 22, 131);
+}
+
+
+
+#TextShow {
+    overflow-wrap: break-word;
+    min-width: 0;
+    position: absolute; 
+    top: 20px; 
+    color: white;
+    padding: 20px;
+    text-wrap: wrap;
+    max-width: 50%;
+    box-sizing: content-box;
+    border: var(--menu-settings-color-border) solid;
+    border-radius: var(--menu-settings-border-radius);
+    background-color: var(--menu-settings-color) ;
+}
+
+
+
+
+
 
 #settings{
     display: flex;
     flex-direction: column;
-    padding: 10px;
+
+    padding: 15px;
     
     margin: 20px;
     position: absolute;
     width: 200px;
     
-    background-color: white;
-    border-radius: 40px;
-    border: solid gray;
+    border: var(--menu-settings-color-border) solid;
+    border-radius: var(--menu-settings-border-radius);
+    background-color: var(--menu-settings-color) ;
     top: 0px;
     left: 0px;
 }
@@ -25,6 +65,13 @@
 .color{
     transform: translateY(10px);
 }
+
+
+
+
+
+
+
 
 #keyboard {
     margin: 10px;
@@ -37,6 +84,7 @@
     height: 430px;
     border: solid transparent;
     /*transform: translate(0, -440px);*/              
+    
     grid-template-rows: 45px 75px 75px 75px 75px 1fr;
     
 }
@@ -51,10 +99,9 @@
     height: 62px;
     width: 65px;
     border-radius: 6px;
-    transition: all 2s linear;
+    transition: all 3s ease-out;
    
 }
-
 
 img{
     margin-top: 10px;
@@ -69,14 +116,11 @@ img{
     align-items: center;
 }
 
-
-
 div:last-child {
     margin-right: 5px;
     margin-left: auto;
     
 }
-
 
 #row1 > div {
     width: 68px;
@@ -105,19 +149,6 @@ div:last-child {
 
 #row6 > div {
     height: 71px;
-}
-
-
-html{
-    height: 100%;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: rgb(79, 22, 131);
 }
 
 #Enter {

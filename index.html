@@ -7,25 +7,36 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <h1 id="TextShow">Text:</h1>
     
-
     <div id="settings">
         <section>
             <p>button-color: </p>
-            <input type="color" class = "color" id="button-color">
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-color">
+                <input type="range" name="" id="opacity1">
+            </div>  
         </section>
         <section>
             <p>button-hover-color: </p>
-            <input type="color" class = "color" id = "button-hover-color">
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-hover-color">
+                <input type="range" name="" id="opacity2">
+            </div>
+            
         </section>
         <section>
             <p>button-keyboard-input: </p>
-            <input type="color" class = "color" id = "button-keyboard-input">
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-keyboard-input">
+                <input type="range" name="" id="opacity3">
+            </div>
         </section>
         <section>
             <p>show keyboard layout</p>
             <input type="checkbox" name="" id="show-keyboard-layout">
         </section>
+        <button onclick="location.reload();">Reset</button>
     </div>
     
     <div id="keyboard" style="transform: translate(2px,8px);">
