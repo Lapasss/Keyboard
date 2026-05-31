@@ -1,0 +1,1 @@
+<img src="img/rpi_MECH_keyboard_SE_layout-1024x451-1.png" alt="keyboard" style="visibility: visible;">
