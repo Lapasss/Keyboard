@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <audio src="sounds/dragon-studio-ding-sfx-472366.mp3"></audio>
     <h1 id="TextShow">Text:</h1>
     
     <div id="settings">
@@ -14,14 +15,14 @@
             <p>button-color: </p>
             <div style="display: flex; flex-direction: column; gap:29px">
                 <input type="color" class = "color" id = "button-color">
-                <input type="range" name="" id="opacity1">
+                <input type="range" min="0" max="255" name="" id="opacity1">
             </div>  
         </section>
         <section>
             <p>button-hover-color: </p>
             <div style="display: flex; flex-direction: column; gap:29px">
                 <input type="color" class = "color" id = "button-hover-color">
-                <input type="range" name="" id="opacity2">
+                <input type="range" min="0" max="255" name="" id="opacity2">
             </div>
             
         </section>
@@ -29,7 +30,7 @@
             <p>button-keyboard-input: </p>
             <div style="display: flex; flex-direction: column; gap:29px">
                 <input type="color" class = "color" id = "button-keyboard-input">
-                <input type="range" name="" id="opacity3">
+                <input type="range" min="0" max="255" name="" id="opacity3">
             </div>
         </section>
         <section>

@@ -1,9 +1,24 @@
+let audioNextId = 0;
+
 window.addEventListener("keydown", (event) => {
-    var keyCodeString = event.code;
+    
     console.log(event);
+    //audio
+    const keyAudio = document.createElement('audio');
+    keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
+    keyAudio.id = "audio" + audioNextId;
+    audioNextId += 1;
+    document.body.appendChild(keyAudio);
+    keyAudio.play();
+    setTimeout(() => {
+        document.body.removeChild(keyAudio);
+    }, 1000)
+
+
+    //keyBoardInput
+    var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.transition = "all 0s";
     document.getElementById(keyCodeString).style.backgroundColor = "var(--button-keyboard-input)";
-    
     document.getElementById("TextShow").innerHTML += event.key;
     
 })

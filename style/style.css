@@ -86,6 +86,7 @@ body {
     /*transform: translate(0, -440px);*/              
     
     grid-template-rows: 45px 75px 75px 75px 75px 1fr;
+    grid-template-columns: 1fr;
     
 }
 #keyboard > .rows div:hover {
