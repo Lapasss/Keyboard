@@ -5,7 +5,20 @@ window.addEventListener("keydown", (event) => {
     console.log(event);
     //audio
     const keyAudio = document.createElement('audio');
-    keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
+    if(event.code == "Space") {
+        keyAudio.src = "sounds/chime-alarm-multimedia_gjsihked.mp3";
+    }
+    else if (event.code == "Backspace") {
+        keyAudio.src = "sounds/16554_1460656892.mp3";
+    } 
+    else if (event.code == "Enter"){
+        keyAudio.src = "sounds/releasing-the-revolver-drum-from-cartridges.mp3";
+    }
+    else {
+        keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
+    }
+    
+    
     keyAudio.id = "audio" + audioNextId;
     audioNextId += 1;
     document.body.appendChild(keyAudio);
