@@ -10,37 +10,9 @@
     <audio src="sounds/dragon-studio-ding-sfx-472366.mp3"></audio>
     <h1 id="TextShow">Text:</h1>
     
-    <div id="settings">
-        <section>
-            <p>button-color: </p>
-            <div style="display: flex; flex-direction: column; gap:29px">
-                <input type="color" class = "color" id = "button-color">
-                <input type="range" min="0" max="255" name="" id="opacity1">
-            </div>  
-        </section>
-        <section>
-            <p>button-hover-color: </p>
-            <div style="display: flex; flex-direction: column; gap:29px">
-                <input type="color" class = "color" id = "button-hover-color">
-                <input type="range" min="0" max="255" name="" id="opacity2">
-            </div>
-            
-        </section>
-        <section>
-            <p>button-keyboard-input: </p>
-            <div style="display: flex; flex-direction: column; gap:29px">
-                <input type="color" class = "color" id = "button-keyboard-input">
-                <input type="range" min="0" max="255" name="" id="opacity3">
-            </div>
-        </section>
-        <section>
-            <p>show keyboard layout</p>
-            <input type="checkbox" name="" id="show-keyboard-layout">
-        </section>
-        <button onclick="location.reload();">Reset</button>
-    </div>
     
-    <div id="keyboard" style="transform: translate(2px,8px);">
+    
+    <div class = "sda" id="keyboard" style="transform: translate(2px,8px);">
         <div class = "rows" id = "row1">
             <div id = "Escape"></div>
             <div></div>
@@ -146,14 +118,55 @@
         </div> 
     </div>
     
-   
 
-    <script src="js/script.js"></script>
-    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@haisi.ll/video/7542933854366027026" data-video-id="7542933854366027026" style="max-width: 605px;min-width: 325px;" > <section></section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
-    <iframe 
-src="https://www.tiktok.com/@haisi.ll/video/7542933854366027026?is_from_webapp=1&sender_device=pc" scrolling="no" 
-style="height: 600px; border: 0px none; width: 550px; margin-top: -55px; margin-left: 5px; 
-margin-right: 0px; ">
-</iframe>
+    <div id="settings">
+        <section>
+            <p>button-color: </p>
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-color">
+                <input type="range" min="0" max="255" name="" id="opacity1">
+            </div>  
+        </section>
+        <section>
+            <p>button-hover-color: </p>
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-hover-color">
+                <input type="range" min="0" max="255" name="" id="opacity2">
+            </div>
+            
+        </section>
+        <section>
+            <p>button-keyboard-input: </p>
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "button-keyboard-input">
+                <input type="range" min="0" max="255" name="" id="opacity3">
+            </div>
+        </section>
+        <section>
+            <p>background-color: </p>
+            <div style="display: flex; flex-direction: column; gap:29px">
+                <input type="color" class = "color" id = "background-color">
+                <input type="range" min="0" max="255" name="" id="opacity4">
+            </div>
+        </section>
+        <section>
+            <p>show keyboard layout</p>
+            <input type="checkbox" name="" id="show-keyboard-layout">
+        </section>
+         <section>
+            <p>Sounds</p>
+            <input type="checkbox" name="" id="keyboard-sounds">
+        </section>
+        <button onclick="location.reload();">Reset</button>
+    </div>
+
+
+
+
+
+
+
+
+<script src="js/script.js"></script>
 </body>
 </html>
