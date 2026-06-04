@@ -158,7 +158,6 @@ div:last-child {
     height: 133px;
     clip-path: polygon(100% 0, 100% 100%, 22% 100%, 22% 46%, 0 46%, 0 0);
     position: relative;
-    right: -0px;
     top: 36px;
     border-radius: 6px;
 }

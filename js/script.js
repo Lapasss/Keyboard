@@ -1,23 +1,31 @@
 let audioNextId = 0;
 
+
 window.addEventListener("keydown", (event) => {
     
     console.log(event);
     //audio
     const keyAudio = document.createElement('audio');
-    if(event.code == "Space") {
-        keyAudio.src = "sounds/chime-alarm-multimedia_gjsihked.mp3";
+    switch (event.code) {
+        case "Space":
+            keyAudio.src = "sounds/chime-alarm-multimedia_gjsihked.mp3";
+        break;;
+        case "Backspace":
+            keyAudio.src = "sounds/16554_1460656892.mp3";
+        break;
+        case "Enter":
+            keyAudio.src = "sounds/releasing-the-revolver-drum-from-cartridges.mp3";
+        break;
+        case "CapsLock":
+            keyAudio.src = "sounds/erro.mp3";
+        break;
+        case "AltLeft":
+            keyAudio.src = "sounds/tuco-get-out.mp3";
+        break;
+
+        default:
+            keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
     }
-    else if (event.code == "Backspace") {
-        keyAudio.src = "sounds/16554_1460656892.mp3";
-    } 
-    else if (event.code == "Enter"){
-        keyAudio.src = "sounds/releasing-the-revolver-drum-from-cartridges.mp3";
-    }
-    else {
-        keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
-    }
-    
     
     keyAudio.id = "audio" + audioNextId;
     audioNextId += 1;
@@ -32,7 +40,7 @@ window.addEventListener("keydown", (event) => {
     var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.transition = "all 0s";
     document.getElementById(keyCodeString).style.backgroundColor = "var(--button-keyboard-input)";
-    document.getElementById("TextShow").innerHTML += event.key;
+    document.getElementById("TextShow").innerHTML += event.key; 
     
 })
 
@@ -63,7 +71,8 @@ let buttonColor = document.getElementById("button-color");
 let buttonHoverColor = document.getElementById("button-hover-color");
 let buttonKeyboardInput = document.getElementById("button-keyboard-input");
 
-
+console.log(buttonColor.value);
+buttonColor.value = "d9342fa6";
 
 buttonColor.addEventListener("change", function() {
     let alpha = parseInt(document.getElementById("opacity1").value);
