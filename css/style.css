@@ -8,10 +8,23 @@
 }
 
 
+
+.exploshionBall{
+    visibility: hidden;
+    position: absolute; vertical-align: middle; 
+    shape-outside: circle(); 
+    clip-path: circle(); 
+    transition: all 2s;
+}
+
+
+
+
+
+
 html{
     height: 100%;
 }
-
 body {
     display: flex;
     flex-direction: column;
@@ -20,6 +33,7 @@ body {
     height: 100%;
     background-color: rgb(79, 22, 131);
 }
+
 
 
 
@@ -48,11 +62,10 @@ body {
     flex-direction: column;
 
     padding: 15px;
-    
     margin: 20px;
     position: absolute;
     width: 200px;
-    
+
     border: var(--menu-settings-color-border) solid;
     border-radius: var(--menu-settings-border-radius);
     background-color: var(--menu-settings-color) ;
@@ -75,16 +88,15 @@ body {
 
 #keyboard {
     margin: 10px;
-    /*background-image: url("rpi_MECH_keyboard_SE_layout-1024x451-1.png");*/
     background-repeat: no-repeat;
     background-size: 1195px;
+
     padding-left: 4px;
     display: grid;
     width: 1185px;
     height: 430px;
     border: solid transparent;
-    /*transform: translate(0, -440px);*/              
-    
+
     grid-template-rows: 45px 75px 75px 75px 75px 1fr;
     grid-template-columns: 1fr;
     
@@ -93,7 +105,6 @@ body {
     background-color: var(--button-hover-color);
     transition: all 0s;
 }
-
 .rows  div {
     justify-items: flex-end;
     background-color: var(--button-color);
@@ -103,12 +114,10 @@ body {
     transition: all 3s ease-out;
    
 }
-
 img{
     margin-top: 10px;
     width: 1200px;
 }
-
 .rows {
     flex-wrap: wrap;
     width: 100%;
@@ -116,42 +125,33 @@ img{
     gap:  11px;
     align-items: center;
 }
-
 div:last-child {
     margin-right: 5px;
     margin-left: auto;
     
 }
-
 #row1 > div {
     width: 68px;
     height: 36px;
 }
-
 #row2 {
     gap: 11.3px;
 }
-
 #row3 {
     gap: 11.3px;
 }
-
 #row4{
     gap: 11px;
 }
-
 #row5{
     gap: 11.3px;
 }
-
 #row6{
     gap: 11.5px;
 }
-
 #row6 > div {
     height: 71px;
 }
-
 #Enter {
     background-color: var(--button-color);
     width: 80px;
