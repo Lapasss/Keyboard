@@ -10,11 +10,10 @@
 
 
 .exploshionBall{
-    visibility: hidden;
     position: absolute; vertical-align: middle; 
     shape-outside: circle(); 
     clip-path: circle(); 
-    transition: all 2s;
+    transition: all 3s;
 }
 
 

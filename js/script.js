@@ -1,6 +1,9 @@
 let clickFtimes = 0;
 let isVideoRightNow = false;
 
+
+
+
 window.addEventListener("keydown", (event) => {
     
     console.log(event);
@@ -27,7 +30,7 @@ window.addEventListener("keydown", (event) => {
             default:
                 keyAudio.src = "filer/sounds/dragon-studio-ding-sfx-472366.mp3";
         }
-        
+
         document.body.appendChild(keyAudio);
         keyAudio.play();
         setTimeout(() => {
@@ -36,20 +39,14 @@ window.addEventListener("keydown", (event) => {
 
     }
     
+    if(event.code == "KeyK") {
+        explode();    
+    }
+
+
     //video with Fang Yuan
     if(event.code == "KeyF") {
-        if(clickFtimes == 0 && !isVideoRightNow) {
-            setTimeout(() => {
-                if(clickFtimes > 3){
-                    const video = randVideo();
-                    document.body.appendChild(video);
-                    isVideoRightNow = true;
-                    video.play();
-                }
-                clickFtimes = 0; 
-            }, 1000);
-        }
-        clickFtimes += 1;
+        fungYuanVideo();       
     }
 
     //keyBoardInput
@@ -61,6 +58,27 @@ window.addEventListener("keydown", (event) => {
 })
 
 
+function explode() {
+    for(let i = 0; i < 5; i++) {  
+        const myEx = new Explosion(50, (200*i));
+        myEx.createExplosion();
+    }
+}
+async function fungYuanVideo() {
+    if(clickFtimes == 0 && !isVideoRightNow) {
+            await setTimeout(() => {
+                if(clickFtimes > 3){
+                    explode();
+                    const video = randVideo();
+                    document.body.appendChild(video);
+                    isVideoRightNow = true;
+                    video.play();
+                }
+                clickFtimes = 0; 
+            }, 1000);
+        }
+        clickFtimes += 1;
+}
 window.addEventListener("keyup", (event) => {
     var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.removeProperty("transition");
@@ -133,6 +151,7 @@ function randVideo() {
     video.addEventListener("pause", (event) => { 
         document.body.removeChild(video)
         isVideoRightNow = false;
+        explode();
     })
     return video;
 }
