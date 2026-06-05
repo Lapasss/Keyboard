@@ -9,23 +9,23 @@ window.addEventListener("keydown", (event) => {
         const keyAudio = document.createElement('audio');
         switch (event.code) {
             case "Space":
-                keyAudio.src = "sounds/chime-alarm-multimedia_gjsihked.mp3";
+                keyAudio.src = "filer/sounds/chime-alarm-multimedia_gjsihked.mp3";
             break;;
             case "Backspace":
-                keyAudio.src = "sounds/16554_1460656892.mp3";
+                keyAudio.src = "filer/sounds/16554_1460656892.mp3";
             break;
             case "Enter":
-                keyAudio.src = "sounds/releasing-the-revolver-drum-from-cartridges.mp3";
+                keyAudio.src = "filer/sounds/releasing-the-revolver-drum-from-cartridges.mp3";
             break;
             case "CapsLock":
-                keyAudio.src = "sounds/erro.mp3";
+                keyAudio.src = "filer/sounds/erro.mp3";
             break;
             case "AltLeft":
-                keyAudio.src = "sounds/tuco-get-out.mp3";
+                keyAudio.src = "filer/sounds/tuco-get-out.mp3";
             break;
 
             default:
-                keyAudio.src = "sounds/dragon-studio-ding-sfx-472366.mp3";
+                keyAudio.src = "filer/sounds/dragon-studio-ding-sfx-472366.mp3";
         }
         
         document.body.appendChild(keyAudio);
@@ -52,8 +52,6 @@ window.addEventListener("keydown", (event) => {
         clickFtimes += 1;
     }
 
-
-
     //keyBoardInput
     var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.transition = "all 0s";
@@ -69,10 +67,12 @@ window.addEventListener("keyup", (event) => {
     document.getElementById(keyCodeString).style.removeProperty("background-color");   
 })
 
+
+
 let checkboxLayout = document.getElementById("show-keyboard-layout");
 checkboxLayout.addEventListener("change", function() {
     if(this.checked) {
-        document.getElementById("keyboard").style.backgroundImage = ("url('img/rpi_MECH_keyboard_SE_layout-1024x451-1.png')");
+        document.getElementById("keyboard").style.backgroundImage = ("url('filer/img/rpi_MECH_keyboard_SE_layout-1024x451-1.png')");
     }
     else{
         document.getElementById("keyboard").style.removeProperty("background-image");
@@ -113,23 +113,6 @@ buttonKeyboardInput.addEventListener("change", function() {
 })
 
 
-function explosionBall() {
-    const ball = document.createElement('div');
-    let widthAndHight = parseInt(Math.random() * (100 - 30) + 30); //px
-    let randXTransform = parseInt(Math.random() * (400 - (-300)) + (-300)); //px
-    let randYTransform = parseInt(Math.random() * (400 - (-300)) + (-300)); //px
-    let hexGreenColor = parseInt(Math.random() * (254 - 0) + 0);
-    let color;
-    if(hexGreenColor <= 15) {
-        color = "#ff0" + hexGreenColor.toString(16) + "00";    
-    } else {
-        color = "#ff" + hexGreenColor.toString(16) + "00";
-    }
-    ball.style = ` visibility: hidden; background-color: ${color};  width: ${widthAndHight}px; height: ${widthAndHight}px; transform: translate(${randXTransform}px, ${randYTransform}px); position: absolute; vertical-align: middle; shape-outside: circle(); clip-path: circle(); transition: all 2s;`;
-    ball.className = "explosion";
-
-    return ball;
-}
 
 
 function randVideo() {
@@ -148,19 +131,6 @@ function randVideo() {
     videoSource.src = videoList[randVideoNumber];
     video.appendChild(videoSource);
     video.addEventListener("pause", (event) => { 
-        for (let index = 0; index < 20; index++) {
-            document.body.appendChild(explosionBall());
-        }
-        const explosionBalls = document.getElementsByClassName("explosion");
-
-        for (let index = 0; index < explosionBalls.length; index++) {
-                            explosionBalls[index].style.transition = "all 0s";
-            explosionBalls[index].style.removeProperty("visibility");
-            setTimeout(() => {
-                explosionBalls[index].style.transition = "all 2s";
-                explosionBalls[index].style.removeProperty("transform");
-            },100);
-        }
         document.body.removeChild(video)
         isVideoRightNow = false;
     })
