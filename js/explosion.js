@@ -14,10 +14,6 @@ class ExplosionBall{
         this.ball.className = "exploshionBall";
     }
 
-    delete() {
-        document.body.removeChild(this.ball);
-    }
-
     fly() {
         const boundary = 600;
         let randXTransform = parseInt(Math.random() * (boundary - (-boundary)) + (-boundary)); //px
@@ -44,8 +40,6 @@ class Explosion{
             setTimeout(() => {resolve("+");}, 100);
             
         });
-        
-       
     }
 
     async createExplosion() {
@@ -58,15 +52,16 @@ class Explosion{
         }, this.delay);
         setTimeout(() => {
             this.particles.forEach(element => {
+                element.ball.style.backgroundColor = "#d9342f00";
+            });
+        }, this.delay*2);
+        setTimeout(() => {
+            this.particles.forEach(element => {
                 document.body.removeChild(element.ball);
             });
-        }, this.delay + 3000);
+        }, this.delay*2 + 3000);
     }
 
-    deleteBalls() {
-        this.particles.forEach((element) => {
-            document.body.removeChild(element.ball);
-        });
-    }
+    
 
 }
