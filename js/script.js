@@ -8,7 +8,7 @@ window.addEventListener("keydown", (event) => {
     
     console.log(event);
     //audio
-    if(document.getElementById("keyboard-sounds").checked) {
+    if(!document.getElementById("keyboard-sounds").checked) {
         const keyAudio = document.createElement('audio');
         switch (event.code) {
             case "Space":
