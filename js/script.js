@@ -46,14 +46,37 @@ window.addEventListener("keydown", (event) => {
 
     //video with Fang Yuan
     if(event.code == "KeyF") {
-        fungYuanVideo();       
+        if(clickFtimes == 0 && !isVideoRightNow) {
+            clickFtimes += 1;
+            setTimeout(() => {
+                if(clickFtimes > 3){
+                    explode();
+                    const video = randVideo();
+                    document.body.appendChild(video);
+                    isVideoRightNow = true;
+                    video.play();
+                }
+                clickFtimes = 0;
+            }, 1000);
+        }
+        else {
+            clickFtimes += 1;
+        }    
+        
     }
 
     //keyBoardInput
     var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.transition = "all 0s";
     document.getElementById(keyCodeString).style.backgroundColor = "var(--button-keyboard-input)";
-    document.getElementById("TextShow").innerHTML += event.key; 
+    if(event.code.includes("Key") || event.code.includes("Digit") || event.code == "Space"){
+        document.getElementById("TextShow").innerHTML += event.key; 
+    }
+    else if(event.code == "Backspace"){
+        const TextShow = document.getElementById("TextShow"); 
+        TextShow.innerHTML = TextShow.innerHTML.slice(0, -1);
+    }
+        
     
 })
 
@@ -63,22 +86,16 @@ function explode() {
         const myEx = new Explosion(50, (200*i));
         myEx.createExplosion();
     }
+    const audio = document.createElement('audio');
+    audio.src = "filer/sounds/big-explosion.mp3";
+    document.body.appendChild(audio);
+    audio.play();
+    setTimeout(() => {
+        document.body.removeChild(audio);
+    }, 1000)
+
 }
-async function fungYuanVideo() {
-    if(clickFtimes == 0 && !isVideoRightNow) {
-            await setTimeout(() => {
-                if(clickFtimes > 3){
-                    explode();
-                    const video = randVideo();
-                    document.body.appendChild(video);
-                    isVideoRightNow = true;
-                    video.play();
-                }
-                clickFtimes = 0; 
-            }, 1000);
-        }
-        clickFtimes += 1;
-}
+
 window.addEventListener("keyup", (event) => {
     var keyCodeString = event.code;
     document.getElementById(keyCodeString).style.removeProperty("transition");
@@ -99,18 +116,22 @@ checkboxLayout.addEventListener("change", function() {
 
 
 const root = document.documentElement;
-//root.style.setProperty("--button-color", "rgba(202, 45, 45, 0.36);");
-//root.style.setProperty("--button-hover-color", "rgba(46, 43, 43, 0.357);");
-//root.style.setProperty("--button-keyboard-input", "rgba(46, 43, 43, 0.357);");
 
 let buttonColor = document.getElementById("button-color");
 let buttonHoverColor = document.getElementById("button-hover-color");
+let backgroundColor = document.getElementById("background-color");
 let buttonKeyboardInput = document.getElementById("button-keyboard-input");
 
-console.log(buttonColor.value);
-buttonColor.value = "#d9342f";
+buttonColor.value = getComputedStyle(root).getPropertyValue('--button-color').slice(0, -2);
+buttonHoverColor.value = getComputedStyle(root).getPropertyValue('--button-hover-color').slice(0, -2);
+buttonKeyboardInput.value = getComputedStyle(root).getPropertyValue('--button-keyboard-input').slice(0, -2);
+backgroundColor.value = getComputedStyle(root).getPropertyValue('--background-color');
 
-//I need to change it to https://github.com/simonwep/pickr?
+
+backgroundColor.addEventListener("change", function() {
+    let color = this.value;
+    root.style.setProperty("--background-color", color);
+})
 buttonColor.addEventListener("change", function() {
     let alpha = parseInt(document.getElementById("opacity1").value);
     let color = this.value;
@@ -145,13 +166,14 @@ function randVideo() {
         "https://v45.tiktokcdn-eu.com/455d498d5cf450aad3404f175712389e/6a248b4a/video/tos/alisg/tos-alisg-pve-0037c001/ooIAPPEBz10zMB0YUa4EUHATx5BsQDCiAiIiV/?a=1233&bti=ODszNWYuMDE6&&bt=707&ft=bC~FamDdPD12NWtcKn-UxKK5hY3W3wv25WcAp&mime_type=video_mp4&rc=aGZoZzs1Nzk1MzZnNmk2NUBpM2Y5NG45cmZqNjMzODczNEAtNC40XjUyNTAxXl42LzMwYSMtMXMuMmQ0NG5hLS1kMTFzcw%3D%3D&vvpl=1&l=20260604210350B24050866283045F8796&btag=e0007d000",
     ];
     let randVideoNumber = parseInt(Math.random() * (videoList.length - 0) + 0);
-    video.style = "width: 600px; height: 600px; position: absolute; vertical-align: middle";
+    video.id = "FangYuanVideo";
     videoSource.src = videoList[randVideoNumber];
     video.appendChild(videoSource);
     video.addEventListener("pause", (event) => { 
-        document.body.removeChild(video)
-        isVideoRightNow = false;
+        document.body.removeChild(video);
         explode();
+        isVideoRightNow = false;
+        clickFtimes = 0;
     })
     return video;
 }

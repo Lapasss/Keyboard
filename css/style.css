@@ -1,10 +1,11 @@
 :root {
-    --button-color: rgba(46, 43, 43, 0.357);
-    --button-hover-color: rgba(190, 48, 178, 0.721);
+    --button-color: #2e2b2b5b;
+    --button-hover-color: #be30b2b8;
     --button-keyboard-input:  #d9342fa6;
-    --menu-settings-color: rgba(255, 255, 255, 0.516);
+    --menu-settings-color: #ffffff84;
     --menu-settings-color-border:  rgb(128, 128, 128);
     --menu-settings-border-radius: 40px;
+    --background-color: #4e1683;
 }
 
 
@@ -30,7 +31,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: rgb(79, 22, 131);
+    background-color: var(--background-color);
 }
 
 
@@ -81,6 +82,29 @@ body {
 
 
 
+#FangYuanVideo{
+    width: 600px; 
+    height: 600px; 
+    position: absolute; 
+    vertical-align: middle;
+    animation-name: FangYuanAnimation; 
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes FangYuanAnimation {
+    0%{transform: scale(0.8);
+    }
+    25%{transform: scale(1);    
+    }
+    50%{transform: scale(0.8);
+    }
+    75%{transform: scale(1);}
+
+    100%{transform: scale(0.8);
+    }
+}
 
 
 
