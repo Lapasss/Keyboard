@@ -1,6 +1,6 @@
 let clickFtimes = 0;
 let isVideoRightNow = false;
-
+let keyVActive = false;
 
 
 
@@ -41,7 +41,18 @@ window.addEventListener("keydown", (event) => {
     
     if(event.code == "KeyK") {
         explode();    
+    } else if (event.code == "KeyV") {
+
+        const body = document.getElementById("body");
+        if(!keyVActive){
+            body.style.backgroundImage = "url('filer/video/Adobe Express2verity.gif')";
+        }
+        else {
+            body.style.removeProperty("background-image");
+        }
+        keyVActive = !keyVActive;
     }
+    
 
 
     //video with Fang Yuan

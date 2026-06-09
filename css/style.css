@@ -26,6 +26,7 @@ html{
     height: 100%;
 }
 body {
+     background-size: cover;
     zoom: 67%;
     display: flex;
     flex-direction: column;
